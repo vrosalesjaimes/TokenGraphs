@@ -36,11 +36,12 @@ This project utilizes [SageMath](https://www.sagemath.org/) for various tasks. T
      ```bash
      conda activate /home/{youruser}/anaconda3/envs/sage
      ```
+#### **Verify SageMath Installation:**
+   
+   You can check that SageMath is installed in the environment with the following command:
+   
+     ```bash
+     sage --version
+     ```
 
-## Using the Project
-
-Now that you've set up the environment, you can start working on the project using SageMath and all the necessary dependencies. Be sure to consult the official SageMath documentation for detailed information on its usage.
-
-All set! You're now ready to leverage the full functionalities of this project using SageMath alongside Anaconda 3 and Mamba. If you have any questions or run into issues, feel free to open an issue in this repository.
-
-Thanks for contributing to our project!
+Make sure you use the created Sage environment as you interpret it.
