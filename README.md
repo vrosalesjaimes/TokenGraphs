@@ -1,1 +1,46 @@
 # Token Graphs
+
+## Environment
+
+This project utilizes [SageMath](https://www.sagemath.org/) for various tasks. To get started, it's essential to ensure that all the necessary dependencies are installed. Below, we'll guide you through the installation process using [Anaconda 3](https://www.anaconda.com/) and [Mamba](https://mamba.readthedocs.io/en/latest/).
+
+### Installing Dependencies
+
+1. **Anaconda 3:**
+   - Download and install Anaconda 3 from [this link](https://www.anaconda.com/).
+   - Follow the instructions on the download page for the appropriate installation based on your operating system.
+
+2. **Mamba:**
+
+   To install Mamba, you can run the following command in your terminal:
+     ```bash
+     curl -L -O https://github.com/conda-forge/miniforge/releases/latest/download/Mambaforge-$(uname)-$(uname -m).sh
+     sh Mambaforge-$(uname)-$(uname -m).sh
+     ```
+     Follow the on-screen instructions to complete the installation.
+
+#### **Environment Setup:**
+
+   After resolving the dependencies, it's time to create the environment. Execute the following command in your terminal:
+
+     ```
+     mamba create -p /home/{youruser}/anaconda3/envs/sage sage sage python=3.11
+     ```
+
+     Agree to download the necessary dependencies when prompted.
+
+#### **Activate the Environment:**
+
+   Once the environment is created, activate it using the following command:
+
+     ```bash
+     conda activate /home/{youruser}/anaconda3/envs/sage
+     ```
+
+## Using the Project
+
+Now that you've set up the environment, you can start working on the project using SageMath and all the necessary dependencies. Be sure to consult the official SageMath documentation for detailed information on its usage.
+
+All set! You're now ready to leverage the full functionalities of this project using SageMath alongside Anaconda 3 and Mamba. If you have any questions or run into issues, feel free to open an issue in this repository.
+
+Thanks for contributing to our project!
