@@ -23,23 +23,25 @@ This project utilizes [SageMath](https://www.sagemath.org/) for various tasks. T
 
    After resolving the dependencies, it's time to create the environment. Execute the following command in your terminal:
 
-     ```
+    
      mamba create -p /home/{youruser}/anaconda3/envs/sage sage sage python=3.11
-     ```
+     
+
+     Agree to download the necessary dependencies when prompted.
 
 #### **Activate the Environment:**
 
    Once the environment is created, activate it using the following command:
 
-     ```
+     ```bash
      conda activate /home/{youruser}/anaconda3/envs/sage
-     ```
+     
 #### **Verify SageMath Installation:**
    
    You can check that SageMath is installed in the environment with the following command:
    
-     ```
+     ```bash
      sage --version
-     ```
+     
 
 Make sure you use the created Sage environment as you interpret it.
