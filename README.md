@@ -13,7 +13,7 @@ This project utilizes [SageMath](https://www.sagemath.org/) for various tasks. T
 2. **Mamba:**
 
    To install Mamba, you can run the following command in your terminal:
-     ```bash
+     ```
      curl -L -O https://github.com/conda-forge/miniforge/releases/latest/download/Mambaforge-$(uname)-$(uname -m).sh
      sh Mambaforge-$(uname)-$(uname -m).sh
      ```
@@ -27,20 +27,18 @@ This project utilizes [SageMath](https://www.sagemath.org/) for various tasks. T
      mamba create -p /home/{youruser}/anaconda3/envs/sage sage sage python=3.11
      ```
 
-     Agree to download the necessary dependencies when prompted.
-
 #### **Activate the Environment:**
 
    Once the environment is created, activate it using the following command:
 
-     ```bash
+     ```
      conda activate /home/{youruser}/anaconda3/envs/sage
      ```
 #### **Verify SageMath Installation:**
    
    You can check that SageMath is installed in the environment with the following command:
    
-     ```bash
+     ```
      sage --version
      ```
 
