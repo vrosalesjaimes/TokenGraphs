@@ -1,5 +1,4 @@
-import sage.graphs.graph as graph
-import networkx as nx
+from sage.graphs.graph import Graph
 from itertools import combinations
 
 class TokenGraph():
@@ -12,14 +11,15 @@ class TokenGraph():
         Initializes the TokenGraph object with the given graph and token number.
 
         Args:
-        graph (nx.Graph): The original graph.
+        graph (sage.Graph): The original graph.
         token_number (int): The number of tokens.
         """
-        self.__graph = nx.Graph(graph6_string)
+        self.__graph = Graph(graph6_string)
+        assert self.graph.num_verts() > token_number, "The number of tokens must be less than the number of nodes in the graph."
         self.__token_number = token_number
 
     @property
-    def graph(self) -> nx.Graph:
+    def graph(self) -> Graph:
         """
         Returns the original graph.
         """
@@ -30,7 +30,7 @@ class TokenGraph():
         """
         Sets the original graph.
         """
-        self.__graph = nx.Graph(value)
+        self.__graph = Graph(value)
     
     @property
     def token_number(self) -> int:
@@ -47,25 +47,23 @@ class TokenGraph():
         assert value < self.graph.number_of_nodes(), "The number of tokens must be less than the number of nodes in the graph."
         self.__token_number = value
     
-
-    def token_graph(self) -> nx.Graph:
+    def generate_toke_graph(self) -> Graph:
         """
-        Returns the token graph.
+        Generates the toekn graph.
         """
-        token_graph = nx.Graph()
+        token_graph = Graph()
+        vertices = list(self.graph.get_vertices())
         
-        set = set(self.__graph.node_dict_factory().keys())
-        nodes = set(combinations(set, self.token_number))
-        
-        graph.add_nodes_from(nodes)
-        
-        for A, B in combinations(nodes, 2):
-            symetric_difference = A.symmetric_difference(B)
+        for subset in combinations(vertices, self.token_number):
+            token_graph.add_vertex(subset)
             
-            if(len(symetric_difference) == 2):
-                a,b = symetric_difference
+        for A, B in combinations(list(token_graph.get_vertices()), 2):
+            symetric_difference = set(A).symmetric_difference(B)
+            
+            if len(symetric_difference) == 2:
+                a, b = symetric_difference
                 
-                if ((a in A and b in B) or (a in B and b in A)) and (self.__graph.has_edge(a,b)):
-                    graph.add_edge(A,B)
-        
+                if ((a in A and b in B) or (a in B and b in A)) and (self.__graph.has_edge(a, b)):
+                    token_graph.add_edge(A, B)
+
         return token_graph
